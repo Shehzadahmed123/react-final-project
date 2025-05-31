@@ -27,11 +27,14 @@ function ProductListing() {
   }, [dispatch]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <>
+     <p className='text-center text-4xl font-bold py-6 my-16 underline'>Our Products</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-8 ">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>
+    </>
   );
 }
 

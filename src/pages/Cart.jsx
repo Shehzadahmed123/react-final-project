@@ -29,10 +29,10 @@ function Cart() {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+    <div className="p-6 mt-16">
+      <h2 className="text-4xl font-bold pb-9 text-center">Your Cart</h2>
       {cartItems.length === 0 ? (
-        <p>Your cart is empty. <Link to="/products" className="text-blue-500">Start shopping!</Link></p>
+        <p className='text-center my-24'>Your cart is empty. <Link to="/products" className="text-blue-500 hover:underline">Start shopping!</Link></p>
       ) : (
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -58,11 +58,11 @@ function Cart() {
             <p className="text-xl font-bold">Total: {totalAmount} USD</p>
             <button 
               onClick={handleClearCart} 
-              className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+              className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 mr-4"
             >
               Clear Cart
             </button>
-            <Link to="/checkout" className="btn-primary mt-4">Proceed to Checkout</Link>
+            <Link to="/checkout" className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Proceed to Checkout</Link>
           </div>
         </div>
       )}

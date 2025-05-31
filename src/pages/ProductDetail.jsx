@@ -15,7 +15,7 @@ function ProductDetail() {
 
   const handleAddToCart = () => {
     dispatch(addItem(product));
-    setSuccessMessage(`${product.name} has been added to your cart!`);
+    setSuccessMessage(`Added to your cart!`);
 
     // Optional: Hide the message after 3 seconds
     setTimeout(() => {
@@ -24,17 +24,25 @@ function ProductDetail() {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 mt-16">
+      <button className='cursor-pointer border px-5 py-2 bg-blue-500 rounded-lg text-white my-4' onClick={() => window.history.back()}> Back</button>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <img src={product.image} alt={product.name} className="w-full h-96 object-cover" />
+        <div className="flex items-center justify-center w-full h-full">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="max-w-full max-h-[80vh] object-contain"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </div>
         <div>
-          <h1 className="text-3xl font-bold">{product.name}</h1>
-          <p className="text-xl text-gray-600">{product.price} USD</p>
+          <h1 className="text-3xl font-bold">{product.title}</h1>
+          <p className="text-xl text-blue-600 font-bold">{product.price} USD</p>
           <p className="mt-4">{product.description}</p>
 
           <button 
             onClick={handleAddToCart} 
-            className="mt-4 bg-red-500 text-white px-4 py-2 mx-5 rounded hover:bg-red-600"
+            className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
           >
             Add to Cart
           </button>
