@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-gray-800 p-4 text-white fixed top-0 left-0 w-full z-50 shadow-md">
+      <nav className="backdrop-blur-lg p-4 bg-black/30 fixed top-0 left-0 w-full z-50 shadow-md">
         <div className="flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold">E-Commerce</Link>
           {/* Desktop Menu */}
