@@ -26,7 +26,7 @@ const AddProductForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gray-900 text-white rounded-lg shadow-md mt-10">
+    <div className="max-w-md mx-auto p-6 border rounded-lg shadow-md mt-10">
       <h2 className="text-2xl font-bold text-center mb-6">Add New Product</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input

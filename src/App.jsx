@@ -13,11 +13,12 @@ import Products from './pages/Admin/products';
 import AppLayout from './components/Layout/AppLayout';
 import AdminLayout from './components/Layout/AdminLayout'
 import Home from './pages/Home';
+import EditProductForm from './pages/Admin/EditProductForm';
 
 const router = createBrowserRouter([
   {
     path: "/admin",
-    element: <AdminLayout/>,
+    element: <AdminLayout />,
     children: [
       {
         index: true, // 👈 This makes AdminPanel the default when /admin is hit
@@ -25,49 +26,53 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/panel",
-        element:<AdminPanel />
+        element: <AdminPanel />
       },
       {
         path: "/admin/add-product",
-        element:<AddProductForm />
+        element: <AddProductForm />
       },
       {
         path: "/admin/products",
-        element:<Products />
+        element: <Products />
       },
       {
         path: "/admin/orders",
-        element:<OrderHistory />
+        element: <OrderHistory />
+      },
+      {
+        path: "/admin/edit-product/:id",
+        element: <EditProductForm />
       }
     ]
   },
-    {
+  {
     path: "/",
     element: <AppLayout />,
     children: [
       {
         index: true,
-        element:<Home />
+        element: <Home />
       },
       {
         path: "/products",
-        element:<ProductListing />
+        element: <ProductListing />
       },
       {
         path: "/products/:id",
-        element:<ProductDetail />
+        element: <ProductDetail />
       },
       {
         path: "/cart",
-        element:<Cart />
+        element: <Cart />
       },
       {
         path: "/checkout",
-        element:<Checkout />
+        element: <Checkout />
       },
       {
         path: "/orders",
-        element:<OrderHistory />
+        element: <OrderHistory />
       }
     ]
   }

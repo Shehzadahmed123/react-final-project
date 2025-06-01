@@ -1,14 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteProduct } from '../../features/productSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const Products = () => {
   const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleDelete = (id) => {
     dispatch(deleteProduct(id));
   };
+
+  const handleEdit = (id) => {
+    navigate(`/admin/edit-product/${id}`);
+  }
 
   return (
     <div className="flex ">
@@ -21,7 +27,7 @@ const Products = () => {
           {products.length === 0 ? (
             <p>No products available. Add some!</p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2  gap-4">
               {products.map((product) => (
                 <div key={product.id} className="border p-4  rounded shadow">
                   <img src={product.image} alt={product.name} className="w-full h-80 object-cover mb-4" />
@@ -30,7 +36,7 @@ const Products = () => {
                   <p className="mt-2 text-gray-600">{product.description}</p>
                   <div className="flex justify-between mt-4">
                     <button onClick={() => handleDelete(product.id)} className="text-red-500 hover:underline">Delete</button>
-                    <button className="text-green-500 hover:underline">Edit</button>
+                    <button onClick={() => handleEdit(product.id)} className="text-green-500 hover:underline">Edit</button>
                   </div>
                 </div>
               ))}

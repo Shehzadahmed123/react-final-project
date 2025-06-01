@@ -27,6 +27,9 @@ const cartSlice = createSlice({
       if (itemToRemove) {
         state.totalAmount -= itemToRemove.price * itemToRemove.quantity; // Adjust total amount
         state.items = state.items.filter(item => item.id !== action.payload);
+        if (state.items.length === 0) {
+          state.totalAmount = 0;
+        }
         localStorage.setItem('cart', JSON.stringify(state)); // Save to localStorage
       }
     },
@@ -49,9 +52,9 @@ const cartSlice = createSlice({
         if (item.quantity > 1) {
           item.quantity -= 1; // Decrease quantity if it's more than 1
           state.totalAmount -= item.price; // Adjust total amount
-        } else {
-          state.totalAmount += item.price;
-          state.items = state.items.filter(i => i.id !== action.payload); // Remove the item if quantity is 1
+        }
+        if (state.items.length === 0) {
+          state.totalAmount = 0;
         }
         localStorage.setItem('cart', JSON.stringify(state)); // Save to localStorage
       }

@@ -44,7 +44,7 @@ const AdminSidebar = () => {
         <nav className="flex flex-col p-4 space-y-4">
           <Link to="/admin/panel" className="hover:bg-gray-700 px-3 py-2 rounded">Dashboard</Link>
           <Link to="/admin/add-product" className="hover:bg-gray-700 px-3 py-2 rounded">Add Product</Link>
-          <Link to="/admin/products" className="hover:bg-gray-700 px-3 py-2 rounded">All Product</Link>
+          <Link to="/admin/products" className="hover:bg-gray-700 px-3 py-2 rounded">All Products</Link>
           <Link to="/admin/orders" className="hover:bg-gray-700 px-3 py-2 rounded">Orders</Link>
         </nav>
       </aside>
