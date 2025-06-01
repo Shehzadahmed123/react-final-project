@@ -1,4 +1,3 @@
-import React from 'react';
 
 function OrderHistory() {
   const orders = [
@@ -7,7 +6,7 @@ function OrderHistory() {
   ];
 
   return (
-    <div className="p-4 mt-16">
+    <div className="p-4 ">
       <h2 className="text-2xl font-bold mb-4">Order History</h2>
       <div>
         {orders.map((order) => (

@@ -31,26 +31,33 @@ function Navbar() {
       <nav className="bg-gray-800 p-4 text-white fixed top-0 left-0 w-full z-50 shadow-md">
         <div className="flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold">E-Commerce</Link>
-          <div className="md:hidden">
-            <button onClick={toggleMenu} className="focus:outline-none">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex md:items-center space-x-4">
+            <Link to="/" className="px-3 py-2 rounded hover:bg-gray-700">Home</Link>
+            <Link to="/products" className="px-3 py-2 rounded hover:bg-gray-700">Products</Link>
+            <Link to="/cart" className="px-3 py-2 rounded hover:bg-gray-700 relative">
+              <IoCartOutline />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">{cartItemCount}</span>
+              )}
+            </Link>
+          </div>
+          {/* Mobile Menu Button & Cart */}
+          <div className="md:hidden flex items-center space-x-4">
+            <Link to="/cart" className="relative rounded hover:bg-gray-700 p-2">
+              <IoCartOutline />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">{cartItemCount}</span>
+              )}
+            </Link>
+            <button onClick={toggleMenu} className="focus:outline-none p-2">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </button>
           </div>
-          <div className="hidden md:flex md:items-center space-x-4">
-            <Link to="/" className="px-3 py-2 rounded hover:bg-gray-700">Home</Link>
-            <Link to="/products" className="px-3 py-2 rounded hover:bg-gray-700">Products</Link>
-            <Link to="/cart" className="px-3 py-2 rounded hover:bg-gray-700 relative">
-             <IoCartOutline />
-              {cartItemCount > 0 && (
-                <span className="absolute top-0 right-0 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">{cartItemCount}</span>
-              )}
-            </Link>
-          </div>
         </div>
       </nav>
-
       {/* Backdrop */}
       {isOpen && (
         <div

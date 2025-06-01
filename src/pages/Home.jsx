@@ -1,4 +1,3 @@
-import React from 'react';
 import ProductListing from './ProductListing';
 
 function Home() {

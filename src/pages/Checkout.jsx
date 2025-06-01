@@ -16,8 +16,8 @@ function Checkout() {
 
   return (
     <>
-    <button className='cursor-pointer border px-5 py-2 bg-blue-500 rounded-lg text-white my-4 ml-6' onClick={() => window.history.back()}> Back</button>
-    <div className="p-4 max-w-md mx-auto w-full">
+    <button className='cursor-pointer px-5 py-2 bg-blue-500 rounded-lg text-white my-4 ml-6 mt-20' onClick={() => window.history.back()}> Back</button>
+    <div className="p-4 max-w-md mx-auto w-full border mb-9">
       <h2 className="text-2xl font-bold mb-4 text-center">Checkout</h2>
 
       {step === 1 && (
@@ -32,7 +32,7 @@ function Checkout() {
                 <label className="block mb-1 font-medium">Name:</label>
                 <Field
                   name="name"
-                  className={`input-field w-full px-3 py-2 border rounded ${errors.name && touched.name ? 'border-red-500' : 'border-gray-300'
+                  className={`input-field w-full px-3 py-2 border rounded bg-gray-800 ${errors.name && touched.name ? 'border-red-500' : 'border-gray-300'
                     }`}
                   autoComplete="off"
                   placeholder="Enter your name"
@@ -42,11 +42,11 @@ function Checkout() {
                 )}
               </div>
               <div>
-                <label className="block mb-1 font-medium">Email:</label>
+                <label className="block mb-1 font-medium ">Email:</label>
                 <Field
                   name="email"
                   type="email"
-                  className={`input-field w-full px-3 py-2 border rounded ${errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
+                  className={`input-field w-full px-3 py-2 border rounded bg-gray-800 ${errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
                     }`}
                   autoComplete="off"
                   placeholder = "Enter your email"

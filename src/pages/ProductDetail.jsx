@@ -16,8 +16,7 @@ function ProductDetail() {
   const handleAddToCart = () => {
     dispatch(addItem(product));
     setSuccessMessage(`Added to your cart!`);
-
-    // Optional: Hide the message after 3 seconds
+    
     setTimeout(() => {
       setSuccessMessage('');
     }, 3000);
@@ -25,7 +24,7 @@ function ProductDetail() {
 
   return (
     <div className="p-4 mt-16">
-      <button className='cursor-pointer border px-5 py-2 bg-blue-500 rounded-lg text-white my-4' onClick={() => window.history.back()}> Back</button>
+      <button className='cursor-pointer px-5 py-2 bg-blue-500 rounded-lg text-white my-4' onClick={() => window.history.back()}> Back</button>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="flex items-center justify-center w-full h-full">
           <img
