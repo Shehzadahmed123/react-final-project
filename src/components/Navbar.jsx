@@ -34,6 +34,7 @@ function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex md:items-center space-x-4">
             <Link to="/" className="px-3 py-2 rounded hover:bg-gray-700">Home</Link>
+            <Link to="/Admin" className="px-3 py-2 rounded hover:bg-gray-700">AdminSide</Link>
             <Link to="/products" className="px-3 py-2 rounded hover:bg-gray-700">Products</Link>
             <Link to="/cart" className="px-3 py-2 rounded hover:bg-gray-700 relative">
               <IoCartOutline />
@@ -78,6 +79,7 @@ function Navbar() {
         </div>
         <nav className="flex flex-col p-4 space-y-4">
           <Link to="/" onClick={closeMenu} className="hover:bg-gray-700 px-3 py-2 rounded">Home</Link>
+           <Link to="/Admin" className="px-3 py-2 rounded hover:bg-gray-700">AdminSide</Link>
           <Link to="/products" onClick={closeMenu} className="hover:bg-gray-700 px-3 py-2 rounded">Products</Link>
           <Link to="/cart" onClick={closeMenu} className="hover:bg-gray-700 px-3 py-2 rounded relative">
             Cart

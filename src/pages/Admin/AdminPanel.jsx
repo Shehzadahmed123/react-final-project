@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AdminPanel = () => {
   // Dummy stats (replace with real values from backend or Redux)
   const stats = [
@@ -10,21 +12,25 @@ const AdminPanel = () => {
   ];
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+    <>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {stats.map((stat, index) => (
-          <div
-            key={index}
-            className={`rounded-xl shadow-md p-6 ${stat.bg} ${stat.text} transition hover:scale-105 duration-200`}
-          >
-            <h2 className="text-lg font-semibold mb-2">{stat.title}</h2>
-            <p className="text-3xl font-bold">{stat.value}</p>
-          </div>
-        ))}
+      <Link to="/"
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">Back to Shop</Link>
+      <div className="p-4">
+        <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className={`rounded-xl shadow-md p-6 ${stat.bg} ${stat.text} transition hover:scale-105 duration-200`}
+            >
+              <h2 className="text-lg font-semibold mb-2">{stat.title}</h2>
+              <p className="text-3xl font-bold">{stat.value}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
